@@ -1,3 +1,4 @@
+from flask.json import jsonify
 from flask.views import MethodView
 from flask_smorest import Blueprint
 
@@ -11,4 +12,8 @@ class ShipStationResource(MethodView):
 
     def get(self):
 
-        return get_ss_orders()
+        all_orders = get_ss_orders()
+
+        order_ids = [order.orderId for order in all_orders]
+
+        return jsonify(order_ids)
