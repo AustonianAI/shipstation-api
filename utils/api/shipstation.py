@@ -23,4 +23,4 @@ def get_ss_orders():
 
     headers = get_ss_request_headers()
 
-    return headers
+    return {"Choo Choo": "Welcome to your ShipStation API 🚅"}
